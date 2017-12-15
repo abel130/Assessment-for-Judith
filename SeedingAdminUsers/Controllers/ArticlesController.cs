@@ -93,6 +93,7 @@ namespace SeedingAdminUsers.Controllers
         }
 
         // GET: Articles/Edit/5
+ 
         public ActionResult Edit(int? id)
         {
             if (id == null)
@@ -114,7 +115,7 @@ namespace SeedingAdminUsers.Controllers
         // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
-        [ValidateAntiForgeryToken]
+     
         public ActionResult Edit([Bind(Include = "ArticleID,ArticleTitle,ArticleDescription,PublishDate,UserName")] Article article)
         {
             if (ModelState.IsValid)
@@ -126,6 +127,7 @@ namespace SeedingAdminUsers.Controllers
             return View(article);
         }
         [HttpPost, ActionName("DeleteComment")]
+       
         public ActionResult DeleteComment(Comment cmt)
         {
             var modeltodelete = db.Comments.FirstOrDefault(s => s.CommentID == cmt.CommentID);
