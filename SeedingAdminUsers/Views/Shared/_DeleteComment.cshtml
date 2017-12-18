@@ -1,13 +1,13 @@
 ﻿@model SeedingAdminUsers.Models.Comment
 
-
   
 
 <h3>Are you sure you want to delete this?</h3>
 
 <div>
     @using (Html.BeginForm("DeleteComment", "Articles"))
-{
+    {
+    
     <h4>Comments</h4>
     <dl class="dl-horizontal">
         @Html.HiddenFor(model => model.CommentID)
@@ -33,7 +33,8 @@
         </dt>
 
         <dd>
-            @Html.DisplayFor(model => model.CommentDate)
+          
+            @String.Format("{0:d}", Model.CommentDate)
         </dd>
 
         <dt>
