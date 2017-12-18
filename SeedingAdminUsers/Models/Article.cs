@@ -7,8 +7,8 @@ using System.Web;
 namespace SeedingAdminUsers.Models
 {/// <summary>
 /// Article Model
-/// This will represent a ...
-/// 
+/// This model creates the structure of an article.
+/// Holds values: Article ID, Title, PublishDate, Author and the comments on the article.
 /// </summary>
     public class Article
     {

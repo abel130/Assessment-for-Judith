@@ -34,19 +34,18 @@ namespace SeedingAdminUsers.Migrations
             var UserManager = new UserManager<ApplicationUser>(new UserStore<ApplicationUser>(context));
 
 
-            // create a default user   
+            // creating a default user   
             var user1 = new ApplicationUser();
             user1.UserName = "abel130@gmail.com";
             user1.Email = "abel130@gmail.com";
             string userPWD = "Abel!30";
 
-            // create an admin role 
+            //Creating admin role 
             UserManager.Create(user1, userPWD);
 
             if (!roleManager.RoleExists("Admin"))
             {
-
-                // first we create Admin role  
+                
                 var role = new IdentityRole();
                 role.Name = "Admin";
                 roleManager.Create(role);
@@ -56,7 +55,7 @@ namespace SeedingAdminUsers.Migrations
                 roleManager.Create(role2);
             }
 
-            //Here we create a Admin  user who will maintain the website
+            //Creating Admin  user who will maintain the website
             var adminuser = new ApplicationUser();
             adminuser.UserName = "admin@gmail.com";
             adminuser.Email = "admin@gmail.com";
@@ -66,13 +65,13 @@ namespace SeedingAdminUsers.Migrations
             adminuser.LastName = "Toth";
             var chkUser = UserManager.Create(adminuser, userPWD);
 
-            //Add admin User to Role Admin   
+            //Adding admin User to Role Admin   
             if (chkUser.Succeeded)
             {
                 var result1 = UserManager.AddToRole(adminuser.Id, "admin");
             }
 
-            // creating another role  - name it what you like   
+            // creating another role   
             if (!roleManager.RoleExists("Restricted"))
             {
                 var role = new Microsoft.AspNet.Identity.EntityFramework.IdentityRole();
@@ -89,7 +88,7 @@ namespace SeedingAdminUsers.Migrations
             article1.PublishDate = DateTime.Now;
             try
             {
-                //adding the fault to the database
+                //adding the article to the database
                 context.Articles.AddOrUpdate(article1);
             }
             catch (SqlException ex)
@@ -121,7 +120,7 @@ namespace SeedingAdminUsers.Migrations
             comment2.CommentDate = DateTime.Now;
             try
             {
-                //adding the first response
+                //adding the second response
                 context.Comments.AddOrUpdate(comment2);
             }
             catch (SqlException ex)

@@ -10,6 +10,12 @@ using SeedingAdminUsers.Models;
 
 namespace SeedingAdminUsers.Controllers
 {
+    /// <summary>
+    /// Article Controller
+    /// This controller holds the functions to Create, Edit and Delete.
+    /// Also holds the methods Index and Details.
+    /// These functions can add, edit or delete values from the database.
+    /// </summary>
     public class ArticlesController : Controller
     {
         private ApplicationDbContext db = new ApplicationDbContext();

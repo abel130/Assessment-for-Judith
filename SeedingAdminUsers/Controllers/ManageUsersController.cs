@@ -11,6 +11,13 @@ using System.Web.Mvc;
 
 namespace SeedingAdminUsers.Controllers
 {
+    /// <summary>
+    /// ManagingUsers Controller
+    /// This controller manipulates the users and their roles.
+    /// Contains functions where the users can be Deleted, Created or edit their details such as roles.
+    /// This controller also changes the values in the database when changes are made to the users.
+    /// Contains methods Index and Details.
+    /// </summary>
     [Authorize(Roles = "Admin")]
     public class ManageUsersController : Controller
     {
